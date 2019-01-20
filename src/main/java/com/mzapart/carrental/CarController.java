@@ -14,7 +14,7 @@ import java.util.List;
 class CarController {
 
     @Autowired
-    CarDetailsRepository repository;
+    CarRepository repository;
 
     @GetMapping(value = "/cars/{carId}")
     ResponseEntity<CarDto> detailsForCar(@PathVariable String carId) {
