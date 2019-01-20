@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.mzapart.carrental.dto.CarDto;
+import com.mzapart.carrental.dto.CreateCarRequest;
 
 @SpringBootApplication
 @Getter
@@ -30,6 +31,9 @@ class Car {
 	    name = carName;
 	    description = carDescription;
 	}
+	public static Car withCreateRequest(String carId, CreateCarRequest r) {
+        return new Car(carId, r.getName(), r.getDescription());
+    }
     public CarDto snapshot() {
         return new CarDto(id, name, description);
     }
